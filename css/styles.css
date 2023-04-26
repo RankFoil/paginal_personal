@@ -1,0 +1,283 @@
+:root{
+    /* Permite declarar variables personalizadas (custom properties)*/
+    --blanco:#ffff;
+    --negro:#0000;
+    --cafeOscuro:#803a0b;
+    --crema:#fffff6;
+    --rojo:#d62e2e;
+    --cafe:#c5570d;
+    --fuentePrinciapl:3.8 rem;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto 0 auto;
+    padding: 1rem;
+}
+
+.contenedor_about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 120rem;
+    margin: 0 auto 0 auto;
+    padding: 1rem;
+}
+.sombra{
+    -webkit-box-shadow: 4px 7px 20px 1px rgba(0,0,0,0.6);
+    -moz-box-shadow: 4px 7px 20px 1px rgba(0,0,0,0.6);
+    box-shadow: 4px 7px 20px 1px rgba(0,0,0,0.6);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+html{
+    font-size: 62.5%; /* Se estandariza el porcentaje de rem*/
+}
+
+body{ /* Altera el formato del cuerpo*/
+        background-color: var(--cafeOscuro);
+        font-size: 16px;
+        font-family:"karla",sans-serif; /*Definimos la fuente de la página*/
+}
+.titulo{
+    text-align:center;
+    font-size: 4rem;
+}
+.titulomod{
+    font-size: 3rem;
+}
+
+/*          Tipografía          */
+h1{
+    font-size: 3.5rem;
+    color: var(--crema);
+}
+
+h2{
+    font-size: 2.5rem;
+    background-color: var(--cafe);
+    color: var(--crema);
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+h4{
+    font-size: 2.5rem;
+    color: var(--crema);
+}
+
+
+h1,h2,h3,h4{
+    text-align: center;
+}
+
+.boton{
+    background-color: #c5570d;
+    color: var(--crema);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    width: 40%;
+    text-align: center;
+    border: var(--cafeOscuro);
+    
+}
+
+/**         Navegación          **/
+
+.navBG{
+    background-color: var(--cafe);
+}
+
+.navP{
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    display: flex; /* Es una plantilla*/
+}
+
+/* media query modifica la apariencia de la página según su tamaño,
+   se muetran los tamaños estándar de celular (480px), tablet (768px), PC (1400px)*/
+@media (min-width: 768px){
+    .navP{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navP a{
+    color:var(--blanco);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem; /* Se basa en el modelo de caja (es el espacio entre el contenido y el borde)*/
+    text-decoration: none; /*Le quita el subrayado*/
+}
+
+.navP a:hover{
+    background-color: var(--cafeOscuro);
+    cursor: pointer;
+}
+
+/**         Banner          **/
+
+.banner{
+    background-image: url(../Imagenes/96903035.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+}
+
+.contenidoBanner{
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*Acomodar verticalmente*/
+    justify-content: center; /*Acomodar horizontalmente*/
+    color: var(--blanco)
+}
+
+.banner_contact{
+    background-image: url(../Imagenes/Anime-Girl-Construction-Crew.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+}
+
+/*          Servicios           */
+
+@media (min-width: 768px){
+    .servicios{/* <-- contenedor*/
+    display: grid;
+    grid-template-columns: /*1fr 1fr 1fr <- otra sintaxis*/33.3% 33.3% 33.3%; /*Define el tamaño de cada celda*/
+    column-gap: 1rem;
+    }
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3{
+    color: black;
+    font-weight: 700;
+    text-align: justify;
+}
+
+.servicio p{
+    line-height: 2;
+}
+
+.icono .icon{
+    height: 12rem;
+    width: 12rem;
+    background-color: var(--crema);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-self: center;
+}
+
+
+/*          Contacto            */
+
+@media (min-width: 768px){
+    .contenedor_campos{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1.2rem;
+    row-gap: 1rem;
+    }
+    
+    .campo:nth-child(3), .campo:nth-child(4){ /* Sirve para modificar grids específicos*/
+    grid-column: 1/3;
+    }
+}
+
+.formulario{
+    background-color: var(--crema);
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 1rem; /* Permite modificar el borde para hacerlo ver más circular*/
+    }
+
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    text-align:center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    font-weight: 600;
+    margin: 0.5rem;
+    display: block;
+}
+
+.campo input{
+    width: 85%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.campo textarea{
+    height: 14rem;
+    width: 95%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.social_container{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5rem;
+}
+
+.social{
+    height: 5rem;
+    width: 5rem;
+}
+
+.social_git{
+    height: 10rem;
+    width: 10rem;
+}
+
+.social_footline{
+    display: flex;
+    justify-content: left;
+    color: var(--crema);
+    background-color: #c5570d;
+    width: 10%;
+}
